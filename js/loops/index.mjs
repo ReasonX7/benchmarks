@@ -1,8 +1,7 @@
 import { Bench } from 'tinybench';
 
 const bench = new Bench({
-  time: 1,
-  iterations: 1,
+  time: 500,
   warmupTime: 1000,
   warmupIterations: 100,
 });
@@ -43,7 +42,7 @@ bench
   .add('For Each', forEach)
   .add('For Reduce', forReduce);
 
-// await bench.warmup();
+await bench.warmup();
 await bench.run();
 
 console.table(bench.table());
