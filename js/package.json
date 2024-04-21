@@ -1,0 +1,12 @@
+{
+  "name": "js",
+  "main": "index.js",
+  "author": {
+    "name": "Bohdan Hishka",
+    "email": "reasonx7@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "tinybench": "^2.8.0"
+  }
+}
