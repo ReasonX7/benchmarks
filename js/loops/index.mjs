@@ -16,6 +16,15 @@ const forClassic = () => {
   return sum;
 };
 
+const forWhile = () => {
+  let sum = 0;
+  let index = nums.length;
+  while (index--) {
+    sum += nums[index];
+  }
+  return sum;
+};
+
 const forOf = () => {
   let sum = 0;
   for (const num of nums) {
@@ -38,11 +47,12 @@ const forReduce = () => {
 
 bench
   .add('For Classic', forClassic)
+  .add('For While', forWhile)
   .add('For Of', forOf)
   .add('For Each', forEach)
   .add('For Reduce', forReduce);
 
-await bench.warmup();
+// await bench.warmup();
 await bench.run();
 
 console.table(bench.table());
