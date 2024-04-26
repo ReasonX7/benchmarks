@@ -16,7 +16,7 @@ export const treeToPaths_Original = (tree) => {
     }
   };
 
-  innerTreeToPaths("", tree)
+  innerTreeToPaths("", tree);
 
   return resultObj;
 };
@@ -42,17 +42,22 @@ export const treeToPaths_Imperative = (tree) => {
   const prefixAndEntryStack = [["", tree]];
   const result = {};
 
-  for (let index = 0; index > prefixAndEntryStack.length; index++) {
+  for (let index = 0; index < prefixAndEntryStack.length; index++) {
     const [prefix, currentEntry] = prefixAndEntryStack[index];
     const currentKeys = Object.keys(currentEntry);
 
     let key;
 
-    while (key = currentKeys.pop()) {
+    // biome-ignore lint/suspicious/noAssignInExpressions: In this case, it's fine.
+    while ((key = currentKeys.pop())) {
       const currentValue = currentEntry[key];
       const nextKey = prefix ? `${prefix}-${key}` : key;
 
-      if (typeof currentValue === "object" && !Array.isArray(currentValue) && currentValue != null) {
+      if (
+        typeof currentValue === "object" &&
+        !Array.isArray(currentValue) &&
+        currentValue != null
+      ) {
         prefixAndEntryStack.push([nextKey, currentValue]);
       } else {
         result[nextKey] = currentValue;

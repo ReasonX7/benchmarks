@@ -1,12 +1,9 @@
 {
-  "name": "js",
-  "main": "index.js",
-  "author": {
-    "name": "Bohdan Hishka",
-    "email": "reasonx7@gmail.com"
+  "scripts": {
+    "lint": "biome check --apply ."
   },
-  "license": "MIT",
   "dependencies": {
+    "@biomejs/biome": "^1.7.1",
     "mitata": "^0.1.11",
     "tinybench": "^2.8.0",
     "vitest": "^1.5.2"

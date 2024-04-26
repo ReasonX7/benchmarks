@@ -1,12 +1,12 @@
+import { dirname, fromFileUrl, join } from "https://deno.land/std@0.188.0/path/mod.ts";
 import { Bench } from "tinybench";
-import { fromFileUrl, dirname, join } from "https://deno.land/std@0.188.0/path/mod.ts";
 
 const bench = new Bench({ time: 500 });
 
 const dir = dirname(fromFileUrl(import.meta.url));
 const fileLocation = join(dir, "assets/1000-words.txt");
 
-console.log(fileLocation)
+console.log(fileLocation);
 
 const singleFileReadToBuffer = async () => {
   return await Deno.readFile(fileLocation);

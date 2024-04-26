@@ -27,6 +27,8 @@ export const forOf = () => {
 
 export const forEach = () => {
   let sum = 0;
+
+  // biome-ignore lint/complexity/noForEach: This is a benchmark.
   nums.forEach((value) => {
     sum += value;
   });

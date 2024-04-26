@@ -1,5 +1,9 @@
-import { describe, it, expect } from "vitest";
-import { treeToPaths_Functional, treeToPaths_Original, treeToPaths_Imperative } from "./tree-to-paths.mjs";
+import { describe, expect, it } from "vitest";
+import {
+  treeToPaths_Functional,
+  treeToPaths_Imperative,
+  treeToPaths_Original,
+} from "./tree-to-paths.mjs";
 
 describe("trees", () => {
   describe("Test Case #01", () => {
@@ -20,8 +24,19 @@ describe("trees", () => {
   });
 
   describe("Test Case #02", () => {
-    const input = { a: 1, b: [2, { c: 3, cc: { dd: 1 } }], d: { e: 4, f: [5, 6], h: { i: 7, j: 8 } } };
-    const expected = { a: 1, b: [2, { c: 3, cc: { dd: 1 } }], "d-e": 4, "d-f": [5, 6], "d-h-i": 7, "d-h-j": 8 };
+    const input = {
+      a: 1,
+      b: [2, { c: 3, cc: { dd: 1 } }],
+      d: { e: 4, f: [5, 6], h: { i: 7, j: 8 } },
+    };
+    const expected = {
+      a: 1,
+      b: [2, { c: 3, cc: { dd: 1 } }],
+      "d-e": 4,
+      "d-f": [5, 6],
+      "d-h-i": 7,
+      "d-h-j": 8,
+    };
 
     it("#treeToPaths_Functional", () => {
       expect(treeToPaths_Functional(input)).toEqual(expected);

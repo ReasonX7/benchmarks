@@ -1,7 +1,7 @@
-import { Bench } from "tinybench";
 import { readFile } from "node:fs/promises";
+import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { join, dirname } from "node:path";
+import { Bench } from "tinybench";
 
 const bench = new Bench({ time: 500 });
 

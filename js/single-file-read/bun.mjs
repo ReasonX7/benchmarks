@@ -1,5 +1,5 @@
-import { Bench } from "tinybench";
 import { join } from "node:path";
+import { Bench } from "tinybench";
 
 const bench = new Bench({ time: 500 });
 
