@@ -7,7 +7,8 @@
   },
   "license": "MIT",
   "dependencies": {
+    "mitata": "^0.1.11",
     "tinybench": "^2.8.0",
-    "mitata": "^0.1.11"
+    "vitest": "^1.5.2"
   }
 }
